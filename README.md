@@ -6,11 +6,11 @@
 ---
 2. Parse the model files into data structures  
 `python parse.py simple_map THRESHOLD_LOWER THRESHOLD_UPPER`  
-where the last to parameters are the lower threshold and upper threshold
+should generate `simple_map.py`
 ---
 3. Compute bfs costs pre and post decision points  
 `python bfs_decision.py`  
-(it should generate two property files and one model file for each decision point)
+(it should generate `pre-decision.props` and `post-decision.props` and one model file for each decision point, i.e. `simple_map$i$.prism` where i is the state number for each decision point)
 ---
 4. Check the cost of pre and post decision point in properties  
 `prism simple_map.prism pre-decision.props -exportresults pre-decisionLog.txt`  
@@ -18,6 +18,7 @@ where the last to parameters are the lower threshold and upper threshold
 ---
 5. Generate lp formulation by  
 `python generate-lp.py`
+and get `lp-output.txt`
 ---
-6. Go to https://online-optimizer.appspot.com/?model=builtin:empty.mod and copy the content in lp-output.txt  
+6. Go to https://online-optimizer.appspot.com/?model=builtin:empty.mod and copy the content in `lp-output.txt`  
 Solve the model and view the result in variables section

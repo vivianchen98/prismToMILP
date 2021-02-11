@@ -1,0 +1,11 @@
+R{"dist"}min=? [ F s=0 ]:
+Result
+0.0
+
+R{"dist"}min=? [ F s=1 ]:
+Result
+2.0
+
+R{"dist"}min=? [ F s=4 ]:
+Result
+5.0

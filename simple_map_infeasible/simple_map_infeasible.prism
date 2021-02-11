@@ -1,0 +1,40 @@
+mdp
+
+module  map
+
+	// define grid
+	r:[1..5] init 1;  // grid row
+	c:[1..5] init 1;  // grid column
+
+	// stop when reaching the destination
+	[stop] (r=5 & c=1) -> true;
+
+	// move on outer highway with no uncertainty
+  	[move_east] (r=1 & (c=1 | c=2 | c=3 | c=4)) | (r=2 & (c=1 | c=3)) -> (c'=c+1);
+	[move_west] (r=5 & c>=2 & c<=5) | (r=4 & (c=2 | c=4))-> (c'=c-1);
+	[move_south] ((r=1 | r=4) & c=1) | ((r=2 | r=3)& c=2) | (r<=4 & c=3) | ((r=2 | r=3) & c=4) | (r<=4 & c=5) -> (r'=r+1);
+
+endmodule
+
+
+// label start and destination states
+label "dest" = (r=5 & c=1);
+
+// every move in inner alleys is a risky step
+//rewards "risky_step"
+//	[move_east] ((r=2 | r=4) & c=1) | (r>=2 & r<=4 & c=2) | (r=2 & c=3): 1;
+//	[move_west] ((r=2 | r=4) & c=1) | (r>=2 & r<=4 & c=2) | (r=2 & c=3): 1;
+//	[move_south]((r=2 | r=4) & c=1) | (r>=2 & r<=4 & c=2) | (r=2 & c=3): 1;
+
+//	[move_west] (r=3 & c=3) : 1.5;
+//	[move_east] (r=3 & c=3) : 1.5;
+//	[move_south](r=3 & c=3) : 1.5;
+//endrewards
+
+// count total steps
+rewards  "dist"
+ 	[move_south] true : 1;
+	[move_west] true : 1;
+  	[move_east] true : 1;
+	[stop] true : 0;
+endrewards

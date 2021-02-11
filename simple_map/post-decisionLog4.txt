@@ -1,0 +1,7 @@
+R{"dist"}min=? [ F "dest" ]:
+Result
+3.0
+
+R{"dist"}max=? [ F "dest" ]:
+Result
+5.0

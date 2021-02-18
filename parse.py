@@ -21,8 +21,6 @@ file_reward_1 = open(filename_reward_1,"r") #risky_step
 # file_reward_2 = open(filename_reward_2,"r") #total_step
 
 file = open(filename_gurobi,"w+")
-# file.write("#!/usr/bin/python \n\n")
-# file.write("from gurobipy import * \n\n")
 
 file.write("THRESHOLD_LOWER = " + THRESHOLD_LOWER + "\n")
 file.write("THRESHOLD_UPPER = " + THRESHOLD_UPPER + "\n")
@@ -56,8 +54,11 @@ file.write(target[:-2] + "]\n\n")
 
 trans = 'trans = {' # in the form of {(s,a,t): prob, ...}
 choices_str = 'choices = ['
+choices_sat_str = 'choices_sat = ['
+
 actions = []
 choices = []
+choices_sat = []
 trans_dict = {} # {(s,t): a, ...}
 for line in file_trans:
     tmp = line.split()
@@ -71,11 +72,15 @@ for line in file_trans:
         choices.append((s,a))
         choices_str += '(' + tmp[0] + ',' + str(a) + '), '
     trans += '(' + tmp[0] + ',' + str(a) + ',' + tmp[2] + '):' + tmp[3] + ', '
+    if (s,a,t) not in choices_sat:
+        choices_sat.append((s,a,t))
+        choices_sat_str += '(' + tmp[0] + ',' + str(a) + ',' + tmp[2] + ')' + ', '
 
 
 file.write("ActionNum = " + str(len(actions)) + "\n")
 
 file.write(choices_str[:-2] + "]\n\n")
+file.write(choices_sat_str[:-2] + "]\n\n")
 file.write(trans[:-2] + "}\n")
 
 # print action string
@@ -139,16 +144,16 @@ rewards_str += '"""'
 file.write("rewards_str = " + rewards_str + "\n\n")
 
 # print preference and ambiguity values for each reward
-alpha = (0.4, 0.6)
-beta = (0.1, 0.1)
-
-alpha_str = 'alpha = ['
-beta_str = 'beta = ['
-for r in range(len(rewards)):
-    alpha_str += str(alpha[r]) + ', '
-    beta_str += str(beta[r]) + ', '
-file.write(alpha_str[:-2] + "]\n")
-file.write(beta_str[:-2] + "]\n\n")
+# alpha = (0.4, 0.6)
+# beta = (0.1, 0.1)
+#
+# alpha_str = 'alpha = ['
+# beta_str = 'beta = ['
+# for r in range(len(rewards)):
+#     alpha_str += str(alpha[r]) + ', '
+#     beta_str += str(beta[r]) + ', '
+# file.write(alpha_str[:-2] + "]\n")
+# file.write(beta_str[:-2] + "]\n\n")
 
 
 

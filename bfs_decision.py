@@ -2,17 +2,14 @@ from simple_map import *
 
 # define decision points
 decision_pts = []
+unique_states = set()
 
-# define constraint: enforce at least one action at each state
-for state in range(StateNum):
-    sum = ""
-    for (s,a) in choices:
-        if s == state:
-            sum += "y"+str(s)+"_"+str(a)+"+"
-    if sum.count('y') > 1:
-        decision_pts.append(state)
-
-print(decision_pts)
+for (s,a) in choices:
+    if s not in unique_states:
+        unique_states.add(s)
+    else:
+        decision_pts.append(s)
+# print(decision_pts)
 
 # write pre-decision property file
 pre_decision_props = open("pre-decision.props","w+")
@@ -44,4 +41,6 @@ for dp in decision_pts:
 # then run prism with model0 and pre_decision_props
 
 # prism generate log files.....
-cost_matrix = {0: [0, 6,12], 1: [2,6,10], 4:[5,3,5]} #in the format of {dp: [pre_cost, range of post_cost]}
+
+cost_matrix = {0: [0, 6,12], 1: [2,6,10], 4:[5,3,5]}
+#in the format of {dp: [pre_cost, min post_cost, max post_cost]}

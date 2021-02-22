@@ -500,18 +500,20 @@ def calculateThresholds(alpha,beta,objectives):
     else:
         lowerBound.append(matrix1[col2Index][0])
         upperBound.append(matrix1[col1Index][0])
-    if(matrix1[col1Index][1] < matrix1[col2Index][1]):
-        lowerBound.append(matrix1[col1Index][1])
-        upperBound.append(matrix1[col2Index][1])
-    else:
-        lowerBound.append(matrix1[col2Index][1])
-        upperBound.append(matrix1[col1Index][1])
-    if(matrix1[col1Index][2] < matrix1[col2Index][2]):
-        lowerBound.append(matrix1[col1Index][2])
-        upperBound.append(matrix1[col2Index][2])
-    else:
-        lowerBound.append(matrix1[col2Index][2])
-        upperBound.append(matrix1[col1Index][2])
+    if(objectives == 2 or objectives == 3):
+        if(matrix1[col1Index][1] < matrix1[col2Index][1]):
+            lowerBound.append(matrix1[col1Index][1])
+            upperBound.append(matrix1[col2Index][1])
+        else:
+            lowerBound.append(matrix1[col2Index][1])
+            upperBound.append(matrix1[col1Index][1])
+    if(objectives == 3):
+        if(matrix1[col1Index][2] < matrix1[col2Index][2]):
+            lowerBound.append(matrix1[col1Index][2])
+            upperBound.append(matrix1[col2Index][2])
+        else:
+            lowerBound.append(matrix1[col2Index][2])
+            upperBound.append(matrix1[col1Index][2])
 
     #print(upperBound)
     #print(lowerBound)

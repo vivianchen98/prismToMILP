@@ -376,7 +376,7 @@ def createPrismFile(rows,cols,objectives):
 
     f.close()
 
-def calculateThresholds(alpha,beta,objectives):
+def calculateThresholds(alpha,beta,objectives,rows):
     print("Calculating Thresholds....")
     upperBound = []
     lowerBound = []
@@ -427,6 +427,16 @@ def calculateThresholds(alpha,beta,objectives):
                 holdMatrix.append(i)
         matrix1 = holdMatrix
 
+    if(objectives == 1 and rows != 5):
+        minIndex = matrix1.index(min(matrix1))
+        matrix1.pop(minIndex)
+    if((objectives == 2 or objectives == 3) and rows != 5):
+        hold = []
+        for i in range(len(matrix1)):
+            hold.append(matrix1[i][0])
+        minIndex = hold.index(min(hold))
+        matrix1.pop(minIndex)
+
     timeLower = alpha[0] - beta[0]
     if(timeLower<0):
         timeLower = 0
@@ -465,9 +475,9 @@ def calculateThresholds(alpha,beta,objectives):
 
     ans = [[0 for x in range(len(matrix2[0]))] for y in range(len(matrix1))]
 
-    #print(matrix1)
-    #print(matrix2)
-    #print(ans)
+    print(matrix1)
+    print(matrix2)
+    print(ans)
 
     for i in range(len(matrix1)):
         for j in range(len(matrix2[0])):
@@ -515,8 +525,8 @@ def calculateThresholds(alpha,beta,objectives):
             lowerBound.append(matrix1[col2Index][2])
             upperBound.append(matrix1[col1Index][2])
 
-    #print(upperBound)
-    #print(lowerBound)
+    print(upperBound)
+    print(lowerBound)
     return upperBound,lowerBound
 
 def findDestState():
@@ -527,8 +537,8 @@ def findDestState():
             line = line.split(" ")
             destState = int(line[0])
 
-    #print("This is the dest state:")
-    #print(destState)
+    print("This is the dest state:")
+    print(destState)
 
     return destState
 
@@ -621,7 +631,7 @@ def main():
             else:
                 os.system("sh prism -javastack 1g scaled_file.prism propertiesfile3.pctl -exportmodel .tra,sta,lab -exporttransrewards scaled_file.rew -exportresults resultsLog.txt")
 
-            thresholdUpper,thresholdLower = calculateThresholds(alpha,beta,objectives)
+            thresholdUpper,thresholdLower = calculateThresholds(alpha,beta,objectives,rows)
             destState = findDestState()
 
             output.write("Upper Threshold:"+str(thresholdUpper)+"\n")

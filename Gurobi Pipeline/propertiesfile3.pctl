@@ -1,2 +1,0 @@
-multi(R{"total_step"}min=?[ C ], R{"risky_step"}min=? [ C ])
-multi(R{"total_step"}min=?[ C ], R{"package_step"}min=? [ C ])

@@ -1,0 +1,30 @@
+Case studies from "Pareto Curves for Probabilistic Model Checking" (ATVA'12)
+============================================================================
+
+Team formation protocol
+-----------------------
+
+Example2:
+prism teamform2.prism teamform.props -prop 1
+prism teamform5.prism teamform.props -prop 1
+
+teamform2: 1847 states
+teamform5: 907993 states
+
+4 objectives
+
+
+Task-graph scheduling problem
+-----------------------------
+
+Example:
+prism taskgraph.prism taskgraph.props -const K=2 
+
+2 objectives (time, energy)
+4 points on the Pareto curve (for K=2)
+
+We can vary constant K to get larger models, e.g.:
+K=2: 7349 states
+K=4: 21638 states
+K=6: 43451 states
+K=8: 72788 states

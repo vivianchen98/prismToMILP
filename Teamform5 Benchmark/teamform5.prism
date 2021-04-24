@@ -60,7 +60,7 @@ module controller // schedules the algorithm
 	turn4 : [0..n_sensors];
 	turn5 : [0..n_sensors];
 
-	// selecting schedule uniformly at random
+	// selecting schedule uniformly at random (5!)
 	[] status=0 -> 1/120 : (turn1'=1) & (turn2'=2) & (turn3'=3) & (turn4'=4) & (turn5'=5) & (status'=1)
 		 + 1/120 : (turn1'=1) & (turn2'=2) & (turn3'=3) & (turn4'=5) & (turn5'=4) & (status'=1)
 		 + 1/120 : (turn1'=1) & (turn2'=2) & (turn3'=4) & (turn4'=3) & (turn5'=5) & (status'=1)

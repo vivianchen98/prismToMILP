@@ -32,7 +32,7 @@ module controller // schedules the algorithm
 	turn1 : [0..n_sensors];
 	turn2 : [0..n_sensors];
 
-	// selecting schedule uniformly at random
+	// selecting schedule uniformly at random (2!)
 	[] status=0 -> 1/2 : (turn1'=1) & (turn2'=2) & (status'=1)
 		 + 1/2 : (turn1'=2) & (turn2'=1) & (status'=1);
 

@@ -1,0 +1,8 @@
+NxN Size: Teamform K=5
+Objectives:2
+Preferences:[0.5, 0.5]
+Uncertainty:[0.49, 0.49]
+Upper Threshold:[2.8979591836734775, 1.6734693877551006]
+LowerThreshold:[2.8979591836734775, 1.6734693877551006]
+MDP States:907993
+MDP Transitions:1084752

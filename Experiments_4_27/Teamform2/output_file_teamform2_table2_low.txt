@@ -1,0 +1,14 @@
+NxN Size: Teamform K=2
+Objectives:2
+Preferences:[0.5, 0.5]
+Uncertainty:[0.1, 0.1]
+Upper Threshold:[0.9795918367346945, 0.7142857142857146]
+LowerThreshold:[0.9795918367346945, 0.7142857142857146]
+MDP States:1847
+MDP Transitions:2288
+MILP Lines:22881
+Permissive States:139
+Binary Variables:2095
+Real Variables:7388
+Overall MILP Execution Time:1.48990297318
+MILP Solve Execution Time:0.224853992462

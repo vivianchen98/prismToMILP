@@ -37,7 +37,8 @@ module scheduler
 	[p2_done] task4=2 -> (task4'=3);
 	[p2_done] task5=2 -> (task5'=3);
 	[p2_done] task6=2 -> (task6'=3);
-	[time] task6<3 -> 1.0 : true;
+	//[time] task6<3 -> 1.0 : true;
+	[time] (p1>0 | p2>0) & task6<3 -> 1.0 : true;
 
 endmodule
 

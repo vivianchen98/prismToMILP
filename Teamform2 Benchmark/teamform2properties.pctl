@@ -1,1 +1,7 @@
 multi(R{"w_1_total"}max=? [ C ], R{"w_2_total"}max=? [ C ]);
+
+multi(R{"task1_completed"}max=? [ C ], R{"task2_completed"}max=? [ C ]);
+
+multi(R{"task1_completed"}max=? [ C ], R{"w_1_total"}max=? [ C ]);
+
+multi(R{"task1_completed"}max=? [ C ], R{"w_1_total"}max=? [ C ], Pmax=? [ F task2_completed ]);

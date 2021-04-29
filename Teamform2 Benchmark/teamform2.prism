@@ -225,3 +225,25 @@ rewards "w_2_total"
     [] task1_completed : 1;
     [] task2_completed : 1;
 endrewards
+
+rewards "task1_completed"
+	[fin1] status=3 
+			 & ((t1_r1=1)=>((m1_t1=1&resource1=1)|(m2_t1=1&resource2=1)))
+			 & ((t1_r2=1)=>((m1_t1=1&resource1=2)|(m2_t1=1&resource2=2)))
+			 & ((t1_r3=1)=>((m1_t1=1&resource1=3)|(m2_t1=1&resource2=3))): 1;
+	[fin2] status=3 
+			 & ((t1_r1=1)=>((m1_t1=1&resource1=1)|(m2_t1=1&resource2=1)))
+			 & ((t1_r2=1)=>((m1_t1=1&resource1=2)|(m2_t1=1&resource2=2)))
+			 & ((t1_r3=1)=>((m1_t1=1&resource1=3)|(m2_t1=1&resource2=3))): 1;
+endrewards
+
+rewards "task2_completed"
+	[fin1] status=3 
+			 & ((t2_r1=1)=>((m1_t2=1&resource1=1)|(m2_t2=1&resource2=1)))
+			 & ((t2_r2=1)=>((m1_t2=1&resource1=2)|(m2_t2=1&resource2=2)))
+			 & ((t2_r3=1)=>((m1_t2=1&resource1=3)|(m2_t2=1&resource2=3))): 1;
+	[fin2] status=3 
+			 & ((t2_r1=1)=>((m1_t2=1&resource1=1)|(m2_t2=1&resource2=1)))
+			 & ((t2_r2=1)=>((m1_t2=1&resource1=2)|(m2_t2=1&resource2=2)))
+			 & ((t2_r3=1)=>((m1_t2=1&resource1=3)|(m2_t2=1&resource2=3))): 1;
+endrewards

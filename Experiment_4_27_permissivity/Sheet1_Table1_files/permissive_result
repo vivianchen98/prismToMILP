@@ -1,0 +1,64 @@
+out_combined_5;1;[1.0];[0.1].sol: 7
+total y num for out_combined_5;1;[1.0];[0.1].sol: 8
+out_combined_5;2;[0.9, 0.1];[0.1, 0.1].sol: 7
+total y num for out_combined_5;2;[0.9, 0.1];[0.1, 0.1].sol: 8
+out_combined_5;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 13
+total y num for out_combined_5;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 15
+out_combined_10;1;[1.0];[0.1].sol: 33
+total y num for out_combined_10;1;[1.0];[0.1].sol: 41
+out_combined_10;2;[0.9, 0.1];[0.1, 0.1].sol: 33
+total y num for out_combined_10;2;[0.9, 0.1];[0.1, 0.1].sol: 41
+out_combined_10;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 37
+total y num for out_combined_10;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 46
+out_combined_20;1;[1.0];[0.1].sol: 363
+total y num for out_combined_20;1;[1.0];[0.1].sol: 372
+out_combined_20;2;[0.9, 0.1];[0.1, 0.1].sol: 361
+total y num for out_combined_20;2;[0.9, 0.1];[0.1, 0.1].sol: 371
+out_combined_20;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 227
+total y num for out_combined_20;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 250
+out_combined_30;1;[1.0];[0.1].sol: 855
+total y num for out_combined_30;1;[1.0];[0.1].sol: 870
+out_combined_30;2;[0.9, 0.1];[0.1, 0.1].sol: 853
+total y num for out_combined_30;2;[0.9, 0.1];[0.1, 0.1].sol: 869
+out_combined_30;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 629
+total y num for out_combined_30;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 662
+out_combined_40;1;[1.0];[0.1].sol: 1563
+total y num for out_combined_40;1;[1.0];[0.1].sol: 1584
+out_combined_40;2;[0.9, 0.1];[0.1, 0.1].sol: 1558
+total y num for out_combined_40;2;[0.9, 0.1];[0.1, 0.1].sol: 1581
+out_combined_40;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 1222
+total y num for out_combined_40;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 1272
+out_combined_50;1;[1.0];[0.1].sol: 2487
+total y num for out_combined_50;1;[1.0];[0.1].sol: 2514
+out_combined_50;2;[0.9, 0.1];[0.1, 0.1].sol: 2483
+total y num for out_combined_50;2;[0.9, 0.1];[0.1, 0.1].sol: 2511
+out_combined_50;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 2011
+total y num for out_combined_50;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 2080
+out_combined_100;1;[1.0];[0.1].sol: 10347
+total y num for out_combined_100;1;[1.0];[0.1].sol: 10404
+out_combined_100;2;[0.9, 0.1];[0.1, 0.1].sol: 10345
+total y num for out_combined_100;2;[0.9, 0.1];[0.1, 0.1].sol: 10403
+out_combined_100;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 9838
+total y num for out_combined_100;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol: 9905
+-------------------- model, enabled, reachable -------------------------
+out_combined_5;1;[1.0];[0.1].sol-7-8
+out_combined_5;2;[0.9, 0.1];[0.1, 0.1].sol-7-8
+out_combined_5;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-13-15
+out_combined_10;1;[1.0];[0.1].sol-33-41
+out_combined_10;2;[0.9, 0.1];[0.1, 0.1].sol-33-41
+out_combined_10;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-37-46
+out_combined_20;1;[1.0];[0.1].sol-363-372
+out_combined_20;2;[0.9, 0.1];[0.1, 0.1].sol-361-371
+out_combined_20;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-227-250
+out_combined_30;1;[1.0];[0.1].sol-855-870
+out_combined_30;2;[0.9, 0.1];[0.1, 0.1].sol-853-869
+out_combined_30;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-629-662
+out_combined_40;1;[1.0];[0.1].sol-1563-1584
+out_combined_40;2;[0.9, 0.1];[0.1, 0.1].sol-1558-1581
+out_combined_40;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-1222-1272
+out_combined_50;1;[1.0];[0.1].sol-2487-2514
+out_combined_50;2;[0.9, 0.1];[0.1, 0.1].sol-2483-2511
+out_combined_50;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-2011-2080
+out_combined_100;1;[1.0];[0.1].sol-10347-10404
+out_combined_100;2;[0.9, 0.1];[0.1, 0.1].sol-10345-10403
+out_combined_100;3;[0.05, 0.9, 0.05];[0.1, 0.1, 0.1].sol-9838-9905

@@ -8,7 +8,7 @@ should be the same folder with the prism executable file.
 4. To change the number of objectives, the preferences (alphas), uncertainty (betas), or the c value, you can edit Lines 581 to 584 in scaleMapBenchmark.py. This is right under the start of the main function.
 
 5. To change the destination states for the model and MILP, you can change the values under the function findDestState in
-scaleMapBenchmark.py at line 530. The terminal states for the model need to be in the list destState. You can do this by changing the values in the for loops present or setting them manually. The current values are set up for my understanding of the terminal states for the uav files.
+scaleMapBenchmark.py at line 532. The terminal states for the model need to be in the list destState. You can do this by changing the values in the for loops present or setting them manually. The current values are set up for my understanding of the terminal states for the uav files.
 
 6. Navigate to the correct folder using the terminal and execute the following
 command: python3 scaleMapBenchmark.py

@@ -3,7 +3,7 @@ import sys
 solution = sys.argv[1]
 
 # instantiate filenames
-index = range(1,5)
+index = range(1,7)
 
 filenames = []
 for i in index:

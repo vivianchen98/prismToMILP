@@ -1,0 +1,100 @@
+mdp
+
+// operator parameters
+const double p=0.5; // probability of increasing workload due to other uncertain tasks
+const double accu_load1 = 0.9; // accuracy at the low workload level (real numbers between 0 and 1)
+const double accu_load2 = 0.8; // accuracy at the high workload level (real numbers between 0 and 1)
+const double fd = 0.7; // accuracy discount due to fatigue (real numbers between 0 and 1)
+const int COUNTER = 1; // fatigue threshold (integers, e.g, 10)
+
+label "destination" = (r=1);
+
+
+// OPERATOR MODEL
+module operator
+
+	k:[0..100] init 0; // fatigue level measured by completetd tasks
+	t:[0..2] init 0; // workload level
+	s:[0..2] init 0; // status of image processing, 0: init, 1: good, 2: bad
+
+	// image processing, the workload may increase due to other unknown tasks
+	[image] t=0 & s=0 -> (1-p):(t'=1) & (s'=0) + p:(t'=2) & (s'=0);
+	// not fatigue, workload level 1
+	[] t=1 & s=0 & k<=COUNTER -> accu_load1:(s'=1)&(k'=k+1) + (1-accu_load1):(s'=2)&(k'=k+1);
+	// fatigue, workload level 1
+	[] t=1 & s=0 & k>COUNTER -> accu_load1*fd:(s'=1) + (1-accu_load1*fd):(s'=2);
+	// not fatigue, workload level 2
+	[] t=2 & s=0 & k<=COUNTER -> accu_load2:(s'=1)&(k'=k+1) + (1-accu_load2):(s'=2)&(k'=k+1);
+	// fatigue, workload level 2
+	[] t=2 & s=0 & k>COUNTER -> accu_load2*fd:(s'=1) + (1-accu_load2*fd):(s'=2);
+
+	// image analysis is bad, UAV need to wait at the waypoint and take another image
+	[wait] s=2 -> (t'=0) & (s'=0);
+
+	// if image analysis is good, UAV can leave the waypoint
+	[leave] s=1 -> (t'=0) & (s'=0);
+
+
+endmodule
+
+
+// UAV MODEL
+module UAV
+	// UAV positions:
+	// inside a waypoint: w!=0, a=0, r=0
+	// fly through certain angle of a waypoint: w!=0, a!=0, r=0
+	// fly through a road point: w=0, a=0, r!=0
+	w:[0..6] init 1; // waypoint
+	a:[0..1] init 0; // angle points
+	r:[0..9] init 0; // road points
+        send: bool init true;
+	in: bool init true;
+
+	// at any waypoint:
+	// send image to human operator for analysis
+	[image] w!=0 & a=0 & r=0 & send -> (send'=false);
+	// wait at the waypoint and send another image
+	[wait] !send -> (send'=true);
+	// fly into a waypoint and take an image
+	[] w=1 & a!=0 & r=0 & in -> (a'=0) & (send'=true); 
+	[] w=2 & a!=0 & r=0 & in -> (a'=0) & (send'=true);
+	[] w=3 & a!=0 & r=0 & in -> (a'=0) & (send'=true);
+	[] w=4 & a!=0 & r=0 & in -> (a'=0) & (send'=true);
+	[] w=5 & a!=0 & r=0 & in -> (a'=0) & (send'=true);
+	[] w=6 & a!=0 & r=0 & in -> (a'=0) & (send'=true);
+	// fly out of the waypoint 
+	[leave] w!=0 & a=0 & r=0 -> (a'=1) & (in'=false);
+
+	// UAV flying choices (anti-clock direction fllowing the road map)
+	[fly] w=1 & (a!=0) & r=0 & !in -> (r'=9);
+	[fly] w=2 & (a!=0) & r=0 & !in -> (r'=5);
+	[fly] w=2 & (a!=0) & r=0 & !in -> (r'=6);
+	[fly] w=2 & (a!=0) & r=0 & !in -> (r'=7);
+	[fly] w=3 & (a!=0) & r=0 & !in -> (w'=4) & (a'=1) & (r'=0) & (in'=true);
+	[fly] w=4 & (a!=0) & r=0 & !in -> (w'=5) & (a'=1) & (r'=0) & (in'=true);
+	[fly] w=5 & (a!=0) & r=0 & !in -> (r'=3);
+	[fly] w=6 & (a!=0) & r=0 & !in -> (r'=2);
+
+	[] r=1 -> true;
+	[fly] r=2 -> (r'=1);
+	[fly] r=3 -> (w'=6) & (a'=1) & (r'=0) & (in'=true);
+	[fly] r=4 -> (w'=5) & (a'=1) & (r'=0) & (in'=true);
+	[fly] r=5 -> (r'=4);
+	[fly] r=6 -> (w'=3) & (a'=1) & (r'=0) & (in'=true);
+	[fly] r=7 -> (r'=8);
+	[fly] r=8 -> (w'=6) & (a'=1) & (r'=0) & (in'=true);
+	[fly] r=9 -> (w'=2) & (a'=1) & (r'=0) & (in'=true);
+
+endmodule
+
+
+rewards "time" // flight time
+        [wait] true: 10;
+        [fly] true: 60;
+endrewards
+
+rewards "ROZ" // ROZ risk
+	[fly] r=5 : 2;
+	[fly] r=6 : 1;
+	[fly] r=7 : 3;
+endrewards

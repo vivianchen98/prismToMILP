@@ -1,0 +1,192 @@
+
+NxN Size: Teamform K=2
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.4285714285714287, 0.2857142857142857]
+LowerThreshold:[0.4285714285714287, 0.2857142857142857]
+MDP States:1847
+MDP Transitions:2288
+MILP Lines:22881
+Permissive States:138
+Binary Variables:2095
+Real Variables:7388
+Overall MILP Execution Time:1.29730820656
+MILP Solve Execution Time:0.164376020432
+
+NxN Size: Teamform K=2
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.4285714285714287, 0.4285714285714287]
+LowerThreshold:[0.2857142857142857, 0.2857142857142857]
+MDP States:1847
+MDP Transitions:2288
+MILP Lines:22881
+Permissive States:138
+Binary Variables:2095
+Real Variables:7388
+Overall MILP Execution Time:1.3002371788
+MILP Solve Execution Time:0.160967111588
+
+NxN Size: Teamform K=2
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.4285714285714287, 0.9387755102040822]
+LowerThreshold:[0.4285714285714287, 0.9387755102040822]
+MDP States:1847
+MDP Transitions:2288
+MILP Lines:22881
+Permissive States:139
+Binary Variables:2095
+Real Variables:7388
+Overall MILP Execution Time:1.40328502655
+MILP Solve Execution Time:0.244804143906
+
+NxN Size: Teamform K=2
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.4285714285714287, 0.9795918367346945]
+LowerThreshold:[0.3877551020408164, 0.9387755102040822]
+MDP States:1847
+MDP Transitions:2288
+MILP Lines:22881
+Permissive States:139
+Binary Variables:2095
+Real Variables:7388
+Overall MILP Execution Time:1.41022896767
+MILP Solve Execution Time:0.253607988358
+
+NxN Size: Teamform K=3
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.19047619047619052, 0.13605442176870747]
+LowerThreshold:[0.19047619047619052, 0.13605442176870747]
+MDP States:12475
+MDP Transitions:15228
+MILP Lines:155095
+Permissive States:795
+Binary Variables:14263
+Real Variables:49900
+Overall MILP Execution Time:23.9325609207
+MILP Solve Execution Time:0.981016874313
+
+NxN Size: Teamform K=3
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.19047619047619052, 0.19047619047619052]
+LowerThreshold:[0.13605442176870747, 0.13605442176870747]
+MDP States:12475
+MDP Transitions:15228
+MILP Lines:157570
+Permissive States:746
+Binary Variables:14263
+Real Variables:49900
+Overall MILP Execution Time:23.7511069775
+MILP Solve Execution Time:0.811465978622
+
+NxN Size: Teamform K=3
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.19047619047619052, 2.2380952380952386]
+LowerThreshold:[0.19047619047619052, 2.2380952380952386]
+MDP States:12475
+MDP Transitions:15228
+MILP Lines:157570
+Permissive States:789
+Binary Variables:14263
+Real Variables:49900
+Overall MILP Execution Time:23.9929680824
+MILP Solve Execution Time:1.05828809738
+
+NxN Size: Teamform K=3
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.19047619047619052, 2.3265306122448983]
+LowerThreshold:[0.12244897959183673, 2.2380952380952386]
+MDP States:12475
+MDP Transitions:15228
+MILP Lines:157570
+Permissive States:789
+Binary Variables:14263
+Real Variables:49900
+Overall MILP Execution Time:24.2220871449
+MILP Solve Execution Time:1.07467603683
+
+NxN Size: Teamform K=4
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.11904761904761912, 0.08843537414965988]
+LowerThreshold:[0.11904761904761912, 0.08843537414965988]
+MDP States:101345
+MDP Transitions:122464
+MILP Lines:1276250
+Permissive States:3475
+Binary Variables:115641
+Real Variables:405380
+Overall MILP Execution Time:2331.33404517
+MILP Solve Execution Time:9.63387918472
+
+NxN Size: Taskgraph K=4
+Property Number: 2
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.11904761904761912, 0.11904761904761912]
+LowerThreshold:[0.08843537414965988, 0.08843537414965988]
+MDP States:101345
+MDP Transitions:122464
+MILP Lines:1276250
+Permissive States:3486
+Binary Variables:115641
+Real Variables:405380
+Overall MILP Execution Time:2363.12732196
+MILP Solve Execution Time:9.74675488472
+
+NxN Size: Taskgraph K=4
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.01]
+Upper Threshold:[0.11904761904761912, 2.891156462585035]
+LowerThreshold:[0.11904761904761912, 2.891156462585035]
+MDP States:101345
+MDP Transitions:122464
+MILP Lines:1276250
+Permissive States:3531
+Binary Variables:115641
+Real Variables:405380
+Overall MILP Execution Time:2356.04018712
+MILP Solve Execution Time:27.9753730297
+
+NxN Size: Taskgraph K=4
+Property Number: 3
+Objectives:2
+Preferences:[0.1, 0.9]
+Uncertainty:[0.01, 0.9]
+Upper Threshold:[0.11904761904761912, 2.959183673469389]
+LowerThreshold:[0.0782312925170068, 2.891156462585035]
+MDP States:101345
+MDP Transitions:122464
+MILP Lines:1276250
+Permissive States:3532
+Binary Variables:115641
+Real Variables:405380
+Overall MILP Execution Time:2349.6834569
+MILP Solve Execution Time:32.3637719154

@@ -1,0 +1,13 @@
+out_combined_row1.sol: 1595
+total y num for out_combined_row1.sol: 1679
+out_combined_row2.sol: 1595
+total y num for out_combined_row2.sol: 1679
+out_combined_row3.sol: 9337
+total y num for out_combined_row3.sol: 9967
+out_combined_row4.sol: 9337
+total y num for out_combined_row4.sol: 9967
+-------------------- model, enabled, reachable -------------------------
+out_combined_row1.sol-1595-1679
+out_combined_row2.sol-1595-1679
+out_combined_row3.sol-9337-9967
+out_combined_row4.sol-9337-9967

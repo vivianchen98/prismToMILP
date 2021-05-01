@@ -1,0 +1,37 @@
+out_combined_row1.sol: 1595
+total y num for out_combined_row1.sol: 1679
+out_combined_row2.sol: 1595
+total y num for out_combined_row2.sol: 1679
+out_combined_row3.sol: 1595
+total y num for out_combined_row3.sol: 1679
+out_combined_row4.sol: 1595
+total y num for out_combined_row4.sol: 1679
+out_combined_row5.sol: 9337
+total y num for out_combined_row5.sol: 9967
+out_combined_row6.sol: 9337
+total y num for out_combined_row6.sol: 9967
+out_combined_row7.sol: 9337
+total y num for out_combined_row7.sol: 9967
+out_combined_row8.sol: 9337
+total y num for out_combined_row8.sol: 9967
+out_combined_row9.sol: 55757
+total y num for out_combined_row9.sol: 60439
+out_combined_row10.sol: 55757
+total y num for out_combined_row10.sol: 60439
+out_combined_row11.sol: 55757
+total y num for out_combined_row11.sol: 60439
+out_combined_row12.sol: 55757
+total y num for out_combined_row12.sol: 60439
+-------------------- model, enabled, reachable -------------------------
+out_combined_row1.sol-1595-1679
+out_combined_row2.sol-1595-1679
+out_combined_row3.sol-1595-1679
+out_combined_row4.sol-1595-1679
+out_combined_row5.sol-9337-9967
+out_combined_row6.sol-9337-9967
+out_combined_row7.sol-9337-9967
+out_combined_row8.sol-9337-9967
+out_combined_row9.sol-55757-60439
+out_combined_row10.sol-55757-60439
+out_combined_row11.sol-55757-60439
+out_combined_row12.sol-55757-60439
